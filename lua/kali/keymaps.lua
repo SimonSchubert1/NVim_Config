@@ -43,6 +43,12 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 keymap("n", "n", "nzz", opts)
 keymap("n", "N", "Nzz", opts)
 
+-- Tab bindings
+keymap("n", "<leader>tn", ":tabnew<CR>", opts)
+keymap("n", "<leader>tc", ":tabclose<CR>", opts)
+keymap("n", "<leader>nt", ":tabnext<CR>", opts)
+keymap("n", "<leader>pt", ":tabprevious<CR>", opts)
+
 -- Insert --
 -- Press jk fast to enter
 keymap("i", "jk", "<ESC>", opts)
