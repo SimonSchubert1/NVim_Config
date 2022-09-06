@@ -2,10 +2,10 @@ local opts = { noremap = true, silent = true}
 
 local term_opts = {silent = true}
 
---Shorten function  name
+-- Shorten function  name
 local keymap = vim.api.nvim_set_keymap
 
---Remap space as leader key
+-- Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
 
 vim.g.mapleader = " "
@@ -35,19 +35,23 @@ keymap("n", "<C-Down>", ":resize -2<CR>", opts)
 keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
---Navigate buffers
+-- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
---Center search results
+-- Center search result
 keymap("n", "n", "nzz", opts)
 keymap("n", "N", "Nzz", opts)
 
 -- Tab bindings
-keymap("n", "<leader>tn", ":tabnew<CR>", opts)
+keymap("n", "<leader>t", ":tabnew<CR>", opts)
 keymap("n", "<leader>tc", ":tabclose<CR>", opts)
-keymap("n", "<leader>nt", ":tabnext<CR>", opts)
-keymap("n", "<leader>pt", ":tabprevious<CR>", opts)
+keymap("n", "<leader>tn", ":tabnext<CR>", opts)
+keymap("n", "<leader>tp", ":tabprevious<CR>", opts)
+
+-- Split bindings
+keymap("n", "<leader>sh", ":split<CR>", opts)
+keymap("n", "<leader>sv", ":vertical split<CR>", opts)
 
 -- Insert --
 -- Press jk fast to enter
