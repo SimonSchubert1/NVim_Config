@@ -2,7 +2,7 @@
 
 ## Issues:
 
-Install npm
+Install npm if you can't install language servers
 
 ## Links:
 
