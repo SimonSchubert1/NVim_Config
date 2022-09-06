@@ -1,5 +1,9 @@
 # NVim_Config
 
+## Issues:
+
+Install npm
+
 ## Links:
 
 ### Playlist: 
