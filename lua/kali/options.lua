@@ -12,7 +12,7 @@ local options = {
     guifont = "monospace:h17",                  --Font used in graphical neovim applications.                              
     wrap = false,                               --Displays lines inside the window (false = displays one long line).
 	signcolumn = "yes",				            --Show the sign column (next to the line numbers).
-	cursorline = true, 			            --Highlight the current line with a horizontal line.
+	cursorline = true, 			                --Highlight the current line with a horizontal line.
     shiftwidth = 4,					            --The number of spaces inserted for each indentation.
 	expandtab = true,				            --Convert tabs to spaces.
 	writebackup = false,			            --Make a backup before overwriting a file.
