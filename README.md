@@ -1,5 +1,12 @@
 # NVim_Config
 
+## For Help:
+
+https://www.youtube.com/watch?v=xr5XWR9UxHA&list=PLhoH5vyxr6Qq41NFL4GvhFp-WLd5xzIzZ&index=12
+
+### Plugin Help:
+doc file in the repo
+
 ## Issues:
 
 Install npm if you can't install language servers
