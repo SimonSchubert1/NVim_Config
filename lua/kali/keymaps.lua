@@ -1,6 +1,6 @@
-local opts = { noremap = true, silent = true}
+local opts = { noremap = true, silent = true }
 
-local term_opts = {silent = true}
+local term_opts = { silent = true }
 
 -- Shorten function  name
 local keymap = vim.api.nvim_set_keymap
@@ -43,12 +43,6 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 keymap("n", "n", "nzz", opts)
 keymap("n", "N", "Nzz", opts)
 
--- Tab bindings
-keymap("n", "<leader>t", ":tabnew<CR>", opts)
-keymap("n", "<leader>tc", ":tabclose<CR>", opts)
-keymap("n", "<leader>tn", ":tabnext<CR>", opts)
-keymap("n", "<leader>tp", ":tabprevious<CR>", opts)
-
 -- Split bindings
 keymap("n", "<leader>sh", ":split<CR>", opts)
 keymap("n", "<leader>sv", ":vertical split<CR>", opts)
@@ -63,8 +57,8 @@ keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
 -- Move text up and down
-keymap("v", "<A-j>", ":m .+1<CR>==",opts)
-keymap("v", "<A-k>", ":m .-2<CR>==",opts)
+keymap("v", "<A-j>", ":m .+1<CR>==", opts)
+keymap("v", "<A-k>", ":m .-2<CR>==", opts)
 keymap("v", "p", '"_dP', opts)
 
 -- Visual Block --
@@ -82,5 +76,10 @@ keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 -- keymap("n", "<leader>f", "<cmd>Telescope find_files<CR>", opts)
-keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<CR>", opts)
+keymap("n", "<leader>ff",
+    "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<CR>"
+    , opts)
 keymap("n", "<c-t>", "<cmd>Telescope live_grep<CR>", opts)
+
+-- Format
+keymap("n", "<leader>f", ":Format<CR>", opts)

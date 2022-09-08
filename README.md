@@ -25,5 +25,7 @@ https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts
 https://github.com/rockerBOO/awesome-neovim
 ### NVim-Tree
 https://github.com/kyazdani42/nvim-tree.lua
+### Null-ls (formating)
+https://github.com/jose-elias-alvarez/null-ls.nvim
 
 Search Awesome and Name (e.g. Rust, Java, React) and there should be a repository with some things in it.

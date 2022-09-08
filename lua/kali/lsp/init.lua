@@ -6,4 +6,4 @@ end
 require "kali.lsp.lsp-installer"
 require("kali.lsp.handlers").setup()
 --require "kali.lsp.configs"
---require "kali.lsp.null-is"
+require "kali.lsp.null-ls"
