@@ -4,6 +4,6 @@ local colorscheme = "darkplus"
 
 local status_ok, _ = pcall(vim.cmd, "colorschem " .. colorscheme)
 if not status_ok then
-    vim.notify("colorschem " .. colorschem .. "not found!")
+    vim.notify("colorschem " .. colorscheme .. "not found!")
     return
 end
