@@ -9,6 +9,7 @@ doc file in the repo
 
 ## Issues:
 
+If Toggleterm function is called put ()
 Install npm if you can't install language servers
 
 ## Links:
