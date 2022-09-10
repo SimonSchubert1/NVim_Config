@@ -48,9 +48,9 @@ nvim_tree.setup {
     show_on_dirs = true,
     icons = {
       hint = "",
-      info = "",
+      info = "",
       warning = "",
-      error = "",
+      error = "",
     },
   },
   view = {
