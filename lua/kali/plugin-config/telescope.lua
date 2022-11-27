@@ -94,5 +94,9 @@ telescope.setup {
     --   extension_config_key = value,
     -- }
     -- please take a look at the readme of the extension you want to configure
+    media_files = {
+            filetypes = {"png", "webp", "jpg", "jpeg", "pdf"},
+            find_cmd = "rg"
+        }
   },
 }

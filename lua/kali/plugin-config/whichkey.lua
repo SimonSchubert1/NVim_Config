@@ -86,8 +86,8 @@ local mappings = {
   },
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
   ["w"] = { "<cmd>w!<CR>", "Save" },
-  ["Q"] = { "<cmd>wq!<CR>", "Quit and save" },
-  ["q"] = { "<cmd>q!<CR>", "Quit without saving"},
+  ["q"] = { "<cmd>wq!<CR>", "Quit and save" },
+  ["Q"] = { "<cmd>q!<CR>", "Quit without saving"},
   ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
   ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
   ["f"] = {
