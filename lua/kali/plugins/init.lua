@@ -40,9 +40,6 @@ return {
     "nvim-treesitter/playground",
     "JoosepAlviste/nvim-ts-context-commentstring",
 
-    -- NerdTree
-    "kyazdani42/nvim-web-devicons",
-
     -- neo-tree
     {
         "nvim-neo-tree/neo-tree.nvim",

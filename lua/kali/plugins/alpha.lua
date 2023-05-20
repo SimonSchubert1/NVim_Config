@@ -1,6 +1,7 @@
 return {
     "goolord/alpha-nvim",
     cmd = "Alpha",
+    event = "VimEnter",
     config = function()
         local alpha = require("alpha")
         local dashboard = require("alpha.themes.dashboard")
@@ -15,7 +16,7 @@ return {
         }
         
         dashboard.section.buttons.val = {
-            dashboard.button("f", "  Find file", ":Telescope find_files <CR>"),
+            dashboard.button("f", "  Find file", ":Telescope find_files find_command=rg,--hidden,--files <CR>"),
             dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
             dashboard.button("p", "  Find project", ":Telescope projects <CR>"),
             dashboard.button("r", "  Recently used files", ":Telescope oldfiles <CR>"),
