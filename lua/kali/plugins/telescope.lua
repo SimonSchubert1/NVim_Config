@@ -1,6 +1,6 @@
 return {
     "nvim-telescope/telescope.nvim",
-    config = function()
+    opts = function()
         local telescope = require("telescope")
         telescope.load_extension('media_files')
 

@@ -23,11 +23,6 @@ return {
     "L3MON4D3/LuaSnip", -- snippet engine
     "rafamadriz/friendly-snippets", -- a bunch of snippets to use
 
-    -- LSP 
-    "neovim/nvim-lspconfig", -- enable LSP
-    "williamboman/nvim-lsp-installer", -- simple to use language server installer
-    "jose-elias-alvarez/null-ls.nvim", -- for formatters
-
     -- Telescope 
     "nvim-telescope/telescope-media-files.nvim",
 
@@ -39,16 +34,6 @@ return {
     "p00f/nvim-ts-rainbow",
     "nvim-treesitter/playground",
     "JoosepAlviste/nvim-ts-context-commentstring",
-
-    -- neo-tree
-    {
-        "nvim-neo-tree/neo-tree.nvim",
-        branch = "v2.x",
-        dependencies = { 
-          "nvim-lua/plenary.nvim",
-          "MunifTanjim/nui.nvim",
-        }
-    },
 
     -- Bufferline
     "moll/vim-bbye",

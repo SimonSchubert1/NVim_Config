@@ -145,8 +145,8 @@ return{
               "Workspace Diagnostics",
             },
             f = { "<cmd>lua vim.lsp.buf.format{async=true}<cr>", "Format" },
+            m = { "<cmd>Mason<cr>", "Mason" },
             i = { "<cmd>LspInfo<cr>", "Info" },
-            I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
             j = {
               "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>",
               "Next Diagnostic",
@@ -189,5 +189,26 @@ return{
         }
 
         whichkey.register(mappings, opts)
+
+        function whichkeyMarkdown()
+            local whichkey = require("which-key")
+            local opts = {
+                mode = "n", -- NORMAL mode
+                prefix = "<leader>",
+                buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+                silent = true, -- use `silent` when creating keymaps
+                noremap = true, -- use `noremap` when creating keymaps
+                nowait = true, -- use `nowait` when creating keymaps
+            }
+            local mappings = {
+                ["m"] = { "<cmd>MarkdownPreview<cr>", "Markdown Preview" },
+            }
+            whichkey.register(mappings, opts)
+        end
+
+        vim.cmd(([[
+            autocmd FileType markdown lua whichkeyMarkdown()
+        ]]))
+
     end,
 }
