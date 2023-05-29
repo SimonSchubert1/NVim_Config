@@ -1,10 +1,15 @@
 return{
     "VonHeikemen/lsp-zero.nvim",
-    branch = "v1.x",
+    branch = "v2.x",
     dependencies = {
         -- LSP Support
         {"neovim/nvim-lspconfig"},             -- Required
-        {"williamboman/mason.nvim"},           -- Optional
+        {
+            "williamboman/mason.nvim",
+            build = function ()
+                pcall(vim.cmd, "MasonUpdate")
+            end
+        },                                     -- Optional
         {"williamboman/mason-lspconfig.nvim"}, -- Optional
 
         -- Autocompletion
@@ -141,6 +146,10 @@ return{
         -- Snippets
         {"L3MON4D3/LuaSnip"},             -- Required
         {"rafamadriz/friendly-snippets"}, -- Optional
+
+        -- Additionals
+        {"mfussenegger/nvim-dap"},
+        {"jose-elias-alvarez/null-ls.nvim"},
     },
     opts = function()
         local lsp = require("lsp-zero").preset({})

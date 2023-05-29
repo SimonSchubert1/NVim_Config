@@ -35,8 +35,6 @@ local options = {
     backup = false,                             --Creates a backup file.
 }
 
-vim.notify = require("notify")                  --Takes nvim-notify as the standard notification tool
-
 for k, v in pairs(options) do
 	vim.opt[k] = v
 end

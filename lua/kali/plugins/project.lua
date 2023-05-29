@@ -39,7 +39,7 @@ return {
             ---@usage path to store the project history for use in telescope
           datapath = vim.fn.stdpath("data"),
         })
-        
+
         require("telescope").load_extension('projects')
     end,
 }
