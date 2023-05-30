@@ -1,5 +1,6 @@
 return {
     "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
     config = function()
         local configs = require("nvim-treesitter.configs")
         configs.setup({
@@ -33,4 +34,7 @@ return {
             },
         })
     end,
+    "p00f/nvim-ts-rainbow",
+    "nvim-treesitter/playground",
+    "JoosepAlviste/nvim-ts-context-commentstring",
 }

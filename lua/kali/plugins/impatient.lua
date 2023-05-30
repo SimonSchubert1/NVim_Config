@@ -3,5 +3,5 @@ return {
     config = function()
         local impatient = require("impatient")
         impatient.enable_profile()
-    end,    
+    end,
 }

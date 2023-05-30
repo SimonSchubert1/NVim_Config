@@ -20,7 +20,7 @@ return {
             --- order matters: if one is not detected, the other is used as fallback. You
             --- can also delete or rearangne the detection methods.
             -- detection_methods = { "lsp", "pattern" }, -- NOTE: lsp detection will get annoying with multiple langs in one project
-            detection_methods = { "pattern" },
+            detection_methods = { "lsp", "pattern" },
 
             ---@usage patterns used to detect root dir, when **"pattern"** is in detection_methods
             patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile", "package.json" },
@@ -35,9 +35,19 @@ return {
             ---@usage list of lsp client names to ignore when using **lsp** detection. eg: { "efm", ... }
             ignore_lsp = {},
 
+            -- Don't calculate root dir on specific directories
+            -- Ex: { "~/.cargo/*", ... }
+            exclude_dirs = {},
+
+            -- What scope to change the directory, valid options are
+            -- * global (default)
+            -- * tab
+            -- * win
+            scope_chdir = 'global',
+
             ---@type string
             ---@usage path to store the project history for use in telescope
-          datapath = vim.fn.stdpath("data"),
+            datapath = vim.fn.stdpath("data"),
         })
 
         require("telescope").load_extension('projects')

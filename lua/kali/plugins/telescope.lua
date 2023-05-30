@@ -1,8 +1,13 @@
 return {
     "nvim-telescope/telescope.nvim",
+    dependencies = {
+        "nvim-lua/plenary.nvim", -- Useful lua functions used by lots of plugins
+        "nvim-lua/popup.nvim", -- An implementation of the Popup API from vim in Neovim
+        "nvim-telescope/telescope-media-files.nvim",
+    },
     opts = function()
         local telescope = require("telescope")
-        telescope.load_extension('media_files')
+        telescope.load_extension("media_files")
 
         local actions = require "telescope.actions"
 
