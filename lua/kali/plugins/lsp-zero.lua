@@ -22,6 +22,11 @@ return{
 
                 require("luasnip/loaders/from_vscode").lazy_load()
 
+                local check_backspace = function ()
+                    local col = vim.fn.col "." - 1
+                    return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
+                end
+
                 local kind_icons = {
                     Text = "",
                     Method = "m",
@@ -162,7 +167,7 @@ return{
         end)
 
         -- (Optional) Configure lua language server for neovim
-        -- require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
+        require("lspconfig").lua_ls.setup(lsp.nvim_lua_ls())
 
         lsp.setup()
     end,
