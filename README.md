@@ -1,5 +1,7 @@
 # NVim_Config
 
+## Core Nvim
+
 ## For Help:
 
 https://www.youtube.com/watch?v=xr5XWR9UxHA&list=PLhoH5vyxr6Qq41NFL4GvhFp-WLd5xzIzZ&index=12
