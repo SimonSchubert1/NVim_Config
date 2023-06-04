@@ -30,3 +30,5 @@ https://github.com/kyazdani42/nvim-tree.lua
 https://github.com/jose-elias-alvarez/null-ls.nvim
 
 Search Awesome and Name (e.g. Rust, Java, React) and there should be a repository with some things in it.
+
+Adding something for java Developement
