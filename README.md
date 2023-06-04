@@ -60,3 +60,11 @@ Navigate to java-debug directory
 run ./mvnw clean install
 
 if its not working watch video
+
+### installing vscode-java-test
+
+Navigate to vscode-java-test directory
+
+run npm i 
+
+run npm run build-plugin
