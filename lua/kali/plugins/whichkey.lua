@@ -131,6 +131,7 @@ return {
                     "<cmd>Gitsigns diffthis HEAD<cr>",
                     "Diff",
                 },
+                i = { "<cmd>Gitignore<cr>", "Create .gitignore file" },
             },
 
             l = {

@@ -35,6 +35,18 @@ local options = {
     backup = false,                             --Creates a backup file.
 }
 
+local g = {
+    loaded_perl_provider = 0,
+    loaded_ruby_provider = 0,
+    loaded_node_provider = 0,
+    loaded_python_provider = 0,
+    loaded_python3_provider = 0,
+}
+
 for k, v in pairs(options) do
 	vim.opt[k] = v
+end
+
+for k, v in pairs(g) do
+    vim.g[k] = v
 end
