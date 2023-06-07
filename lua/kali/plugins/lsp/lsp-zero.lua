@@ -18,7 +18,7 @@ return {
         { "mfussenegger/nvim-dap" },
     },
     opts = function()
-        local lsp = require("lsp-zero").preset({})
+        local lsp = require("lsp-zero").preset({manage_nvim_cmp = false})
 
         lsp.on_attach(function(client, bufnr)
             lsp.default_keymaps({ buffer = bufnr })
