@@ -1,5 +1,5 @@
-require "kali.options"
-require "kali.keymaps"
-require "kali.pluginsfile"
-require "kali.colorscheme"
-require "kali.plugins"
+require("kali.options")
+require("kali.keymaps")
+require("kali.pluginsfile")
+require("kali.colorscheme")
+require("kali.plugins")

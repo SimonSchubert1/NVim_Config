@@ -6,19 +6,30 @@ return {
         { "neovim/nvim-lspconfig" }, -- Required
         {
             "williamboman/mason.nvim",
-            build = ":MasonUpdate"
-        },                                     -- Optional
-        { "williamboman/mason-lspconfig.nvim" }, -- Optional
+            build = ":MasonUpdate",
+            opts = function()
+                require("mason").setup({})
+            end,
+        }, -- Optional
+        {
+            "williamboman/mason-lspconfig.nvim",
+            opts = function()
+                local lspconfig = require("mason-lspconfig")
+                lspconfig.setup({
+                    ensure_installed = { "clangd", "jdtls", "lua_ls", },
+                })
+            end,
+        }, -- Optional
 
         -- Snippets
-        { "L3MON4D3/LuaSnip" },           -- Required
+        { "L3MON4D3/LuaSnip" },       -- Required
         { "rafamadriz/friendly-snippets" }, -- Optional
 
         -- Additionals
         { "mfussenegger/nvim-dap" },
     },
     opts = function()
-        local lsp = require("lsp-zero").preset({manage_nvim_cmp = false})
+        local lsp = require("lsp-zero").preset({ manage_nvim_cmp = false })
 
         lsp.on_attach(function(client, bufnr)
             lsp.default_keymaps({ buffer = bufnr })

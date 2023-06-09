@@ -1,6 +1,11 @@
 return {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
+    dependencies = {
+        "HiPhish/nvim-ts-rainbow2",
+        "nvim-treesitter/playground",
+        "JoosepAlviste/nvim-ts-context-commentstring",
+    },
     config = function()
         local configs = require("nvim-treesitter.configs")
         configs.setup({
@@ -18,12 +23,14 @@ return {
             --
             indent = { enable = true, disable = { "python", "css" } },
             rainbow = {
-            enable = false,
-            -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
-            extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
-            max_file_lines = nil, -- Do not enable for files with more than n lines, int
-            -- colors = {}, -- table of hex strings
-            -- termcolors = {} -- table of colour name strings
+                enable = true,
+                -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
+                query = "rainbow-parens",
+                strategy = require("ts-rainbow").strategy.global,
+                extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
+                max_file_lines = nil, -- Do not enable for files with more than n lines, int
+                -- colors = {}, -- table of hex strings
+                -- termcolors = {} -- table of colour name strings
             },
             playground = {
                 enable = true,
@@ -34,7 +41,4 @@ return {
             },
         })
     end,
-    "p00f/nvim-ts-rainbow",
-    "nvim-treesitter/playground",
-    "JoosepAlviste/nvim-ts-context-commentstring",
 }

@@ -7,6 +7,7 @@ return {
 		{ "saadparwaiz1/cmp_luasnip" }, -- Optional
 		{ "hrsh7th/cmp-nvim-lua" }, -- Optional
 		{ "hrsh7th/cmp-cmdline" }, -- cmdline completions
+        { "rcarriga/cmp-dap" },
 		{ "onsails/lspkind.nvim" }, -- vscode like icons
 	},
 	opts = function()
@@ -153,5 +154,21 @@ return {
 				},
 			}),
 		})
+
+        cmp.setup({
+            enabled = function ()
+                return vim.api.nvim_buf_get_option(0, "buftype") ~= "prompt"
+                    or require("cmp_dap").is_dap_buffer()
+            end
+        })
+
+        cmp.setup.filetype(
+            { "dap-repl", "dapui_watches", "dapui_hover" },
+            {
+                sources = {
+                    { name = "dap" }
+                }
+            }
+        )
 	end,
 }

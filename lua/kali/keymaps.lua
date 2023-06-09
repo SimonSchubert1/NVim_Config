@@ -68,3 +68,11 @@ keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
 keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
+
+-- Run --
+keymap("n", "<F5>", ":Jaq<cr>", opts)
+keymap("v", "<F5>", ":Jaq<cr>", opts)
+keymap("i", "<F5>", ":Jaq<cr>", opts)
+
+keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", opts)
+keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", opts)

@@ -43,6 +43,8 @@ local g = {
     loaded_python3_provider = 0,
 }
 
+package.path = package.path .. ";~/.local/share/nvim/lazy/nvim-treesitter/lua/nvim-treesitter/ts_utils.lua"
+
 for k, v in pairs(options) do
 	vim.opt[k] = v
 end

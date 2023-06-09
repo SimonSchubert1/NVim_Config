@@ -6,9 +6,7 @@ return {
    -- Bufferline
     "moll/vim-bbye",
 
-    -- File jumping in lua
-    "sam4llis/nvim-lua-gf",
-
     --Indent Blankline makes indent Signes and other editor design elements
     --"lukas-reineke/indent-blankline.nvim"
+
 }

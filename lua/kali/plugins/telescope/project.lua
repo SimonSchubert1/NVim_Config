@@ -1,5 +1,8 @@
 return {
     "ahmedkhalf/project.nvim",
+    dependencies =  {
+        "nvim-telescope/telescope.nvim",
+    },
     config = function()
         local project = require("project_nvim")
         project.setup({
