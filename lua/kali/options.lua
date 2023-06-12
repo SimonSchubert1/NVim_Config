@@ -1,38 +1,38 @@
 local options = {
-	tabstop = 4,    				            --Number of spaces that a <Tab> in the file counts for.
-	cmdheight = 1,					            --Number of screen lines to use for the command-line.
-	number = true,					            --Print the line number in front of each line.
-	relativenumber = false,			            --Show the line number relative to the line.
-	numberwidth = 4,				            --Minimal number of columns to use for the line number.
-	sidescrolloff = 8,				            --Minimal number of side lines to keep beside the cursor.
-	scrolloff = 8,					            --Minimal number of screen lines to keep above and below the cursor.
-	mouse = "a",					            --Enables mouse support.
-	background = "dark",			            --Background colortheme.
-	fileencoding = "utf-8",                     --File-content encoding for the current buffer.
-    guifont = "monospace:h17",                  --Font used in graphical neovim applications.                              
-    wrap = false,                               --Displays lines inside the window (false = displays one long line).
-	signcolumn = "yes",				            --Show the sign column (next to the line numbers).
-	cursorline = true, 			                --Highlight the current line with a horizontal line.
-    shiftwidth = 4,					            --The number of spaces inserted for each indentation.
-	expandtab = true,				            --Convert tabs to spaces.
-	writebackup = false,			            --Make a backup before overwriting a file.
-	updatetime = 300,				            --Time for completetion (default 400ms).
-	undofile = true,				            --Enable persistent undo.
-	timeoutlen = 1000,				            --Time towait for a mapped sequence to complete.
-	termguicolors = true,			            --Set term gui colors.
-	swapfile = false,				            --Creates a swapfile that resores data (if the computer crashes the data can be restored).
-	splitright = true,				            --Force all vertical splits to go to the right of current window.
-	splitbelow = true,				            --Force all horizontal splits to go below of current window.
-	smartindent = true,				            --Make indenting smart.
-	smartcase = true,				            --Smart case.
-    showtabline = 2,                            --Always show tabline.
-    showmode = false,                           --Does not show the mode anymore.
-    pumheight = 10,                             --Pop up menu height.
-    hlsearch = true,                            --Highlights all matches on previous search patterns.
-    conceallevel = 0,                           --Makes some characters visible.
-    completeopt = { "menuone", "noselect"},     --Popup menu for code completion for example.
-    clipboard = "unnamedplus",                  --Allows neovim to access the system clipboard so copying and pasting is easier.
-    backup = false,                             --Creates a backup file.
+    tabstop = 4,                            --Number of spaces that a <Tab> in the file counts for.
+    cmdheight = 1,                          --Number of screen lines to use for the command-line.
+    number = true,                          --Print the line number in front of each line.
+    relativenumber = false,                 --Show the line number relative to the line.
+    numberwidth = 4,                        --Minimal number of columns to use for the line number.
+    sidescrolloff = 8,                      --Minimal number of side lines to keep beside the cursor.
+    scrolloff = 8,                          --Minimal number of screen lines to keep above and below the cursor.
+    mouse = "a",                            --Enables mouse support.
+    background = "dark",                    --Background colortheme.
+    fileencoding = "utf-8",                 --File-content encoding for the current buffer.
+    guifont = "monospace:h17",              --Font used in graphical neovim applications.
+    wrap = false,                           --Displays lines inside the window (false = displays one long line).
+    signcolumn = "yes",                     --Show the sign column (next to the line numbers).
+    cursorline = true,                      --Highlight the current line with a horizontal line.
+    shiftwidth = 4,                         --The number of spaces inserted for each indentation.
+    expandtab = true,                       --Convert tabs to spaces.
+    writebackup = false,                    --Make a backup before overwriting a file.
+    updatetime = 300,                       --Time for completetion (default 400ms).
+    undofile = true,                        --Enable persistent undo.
+    timeoutlen = 1000,                      --Time towait for a mapped sequence to complete.
+    termguicolors = true,                   --Set term gui colors.
+    swapfile = false,                       --Creates a swapfile that resores data (if the computer crashes the data can be restored).
+    splitright = true,                      --Force all vertical splits to go to the right of current window.
+    splitbelow = true,                      --Force all horizontal splits to go below of current window.
+    smartindent = true,                     --Make indenting smart.
+    smartcase = true,                       --Smart case.
+    showtabline = 2,                        --Always show tabline.
+    showmode = false,                       --Does not show the mode anymore.
+    pumheight = 10,                         --Pop up menu height.
+    hlsearch = true,                        --Highlights all matches on previous search patterns.
+    conceallevel = 0,                       --Makes some characters visible.
+    completeopt = { "menuone", "noselect" }, --Popup menu for code completion for example.
+    clipboard = "unnamedplus",              --Allows neovim to access the system clipboard so copying and pasting is easier.
+    backup = false,                         --Creates a backup file.
 }
 
 local g = {
@@ -43,12 +43,27 @@ local g = {
     loaded_python3_provider = 0,
 }
 
-package.path = package.path .. ";~/.local/share/nvim/lazy/nvim-treesitter/lua/nvim-treesitter/ts_utils.lua"
-
 for k, v in pairs(options) do
-	vim.opt[k] = v
+    vim.opt[k] = v
 end
 
 for k, v in pairs(g) do
     vim.g[k] = v
+end
+
+local in_wsl = os.getenv('WSL_DISTRO_NAME') ~= nil
+
+if in_wsl then
+    vim.g.clipboard = {
+        name = "WslClipboard",
+        copy = {
+            ['+'] = "clip.exe",
+            ['*'] = "clip.exe",
+        },
+        paste = {
+            ['+'] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+            ['*'] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+        },
+        cache_enabled = 0,
+    }
 end

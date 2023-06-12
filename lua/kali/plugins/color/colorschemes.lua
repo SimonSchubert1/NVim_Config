@@ -4,4 +4,5 @@ return{
     "lunarvim/darkplus.nvim",
     "folke/tokyonight.nvim",
     "catppuccin/nvim",
+    "Mofiqul/dracula.nvim",
 }
