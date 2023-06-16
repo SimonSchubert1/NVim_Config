@@ -86,10 +86,11 @@ return {
 			["a"] = { "<cmd>Alpha<cr>", "Alpha" },
 			["e"] = { "<cmd>NeoTreeRevealToggle<cr>", "Explorer" },
 			["w"] = { "<cmd>w!<CR>", "Save" },
-			["q"] = { "<cmd>q!<CR>", "Quit and save" },
+			["q"] = { "<cmd>q!<CR>", "Quit" },
 			["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
 
 			b = {
+                name = "Buffers",
 				b = {
 					"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
 					"Buffers",
