@@ -181,6 +181,13 @@ return {
 				},
 			},
 
+            d = {
+                name = "Debug",
+                c = { "<cmd>lua require('dap').continue()<cr>", "Start or continue Debug session" },
+                t = { "<cmd>lua require('dapui').toggle()<cr>", "Toggle Debug UI" },
+                b = { "<cmd>lua require('dap').toggle_breakpoint()<cr>", "Toggle Breakpoint"}
+            },
+
 			t = {
 				name = "Terminal",
 				n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },

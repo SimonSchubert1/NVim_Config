@@ -16,7 +16,7 @@ return {
             opts = function()
                 local lspconfig = require("mason-lspconfig")
                 lspconfig.setup({
-                    ensure_installed = { "clangd", "jdtls", "lua_ls", },
+                    ensure_installed = { "clangd", "jdtls", "lua_ls" },
                 })
             end,
         }, -- Optional
@@ -26,8 +26,18 @@ return {
         { "rafamadriz/friendly-snippets" }, -- Optional
 
         -- Additionals
-        { "mfussenegger/nvim-dap" },
-        { "rcarriga/nvim-dap-ui" },
+        {
+            "mfussenegger/nvim-dap",
+            config = function()
+                local dap = require("dap")
+            end,
+        },
+        {
+            "rcarriga/nvim-dap-ui",
+            opts = function()
+                require("dapui").setup()
+            end,
+        },
     },
     opts = function()
         local lsp = require("lsp-zero").preset({ manage_nvim_cmp = false })
@@ -36,7 +46,7 @@ return {
             lsp.default_keymaps({ buffer = bufnr })
         end)
 
-        lsp.skip_server_setup({'jdtls'})
+        lsp.skip_server_setup({ "jdtls" })
 
         -- (Optional) Configure lua language server for neovim
         require("lspconfig").lua_ls.setup(lsp.nvim_lua_ls())
