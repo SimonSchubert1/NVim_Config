@@ -12,6 +12,8 @@ return {
             "build.gradle",
         }
 
+        -- Features
+
         local features = {
             -- change this to `true` to enable codelens
             codelens = false,
