@@ -5,8 +5,4 @@ return {
 
    -- Bufferline
     "moll/vim-bbye",
-
-    --Indent Blankline makes indent Signes and other editor design elements
-    --"lukas-reineke/indent-blankline.nvim"
-
 }
