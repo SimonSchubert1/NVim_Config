@@ -179,6 +179,7 @@ return {
 					"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
 					"Find files",
 				},
+                m = { "<cmd>Telescope media_files<cr>", "Media Files" },
 			},
 
             d = {

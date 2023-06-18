@@ -16,7 +16,7 @@ return {
             opts = function()
                 local lspconfig = require("mason-lspconfig")
                 lspconfig.setup({
-                    ensure_installed = { "clangd", "jdtls", "lua_ls", "cssls", "volar", "marksman", "grammarly" },
+                    ensure_installed = { "clangd", "jdtls", "lua_ls", "cssls", "vuels", "marksman", "grammarly" },
                 })
             end,
         }, -- Optional

@@ -5,9 +5,8 @@ return {
 		"nvim-lua/popup.nvim", -- An implementation of the Popup API from vim in Neovim
 		"nvim-telescope/telescope-media-files.nvim",
 	},
-	opts = function()
+	config = function()
 		local telescope = require("telescope")
-		telescope.load_extension("media_files")
 
 		local actions = require("telescope.actions")
 
@@ -98,10 +97,11 @@ return {
 				-- }
 				-- please take a look at the readme of the extension you want to configure
 				media_files = {
-					filetypes = { "png", "webp", "jpg", "jpeg", "pdf" },
+					filetypes = { "png", "webp", "jpg", "jpeg", "pdf", "mp4" },
 					find_cmd = "rg",
 				},
 			},
 		})
+		telescope.load_extension("media_files")
 	end,
 }
