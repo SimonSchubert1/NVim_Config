@@ -16,13 +16,21 @@ return {
             opts = function()
                 local lspconfig = require("mason-lspconfig")
                 lspconfig.setup({
-                    ensure_installed = { "clangd", "jdtls", "lua_ls", "cssls", "vuels", "marksman", "grammarly" },
+                    ensure_installed = {
+                        "clangd",
+                        "jdtls",
+                        "lua_ls",
+                        "cssls",
+                        "vuels",
+                        "marksman",
+                        "grammarly",
+                    }
                 })
             end,
         }, -- Optional
 
         -- Snippets
-        { "L3MON4D3/LuaSnip" },       -- Required
+        { "L3MON4D3/LuaSnip" },             -- Required
         { "rafamadriz/friendly-snippets" }, -- Optional
 
         -- Additionals
@@ -62,6 +70,14 @@ return {
                     dapui.close()
                 end
             end,
+        },
+        {
+            "jay-babu/mason-nvim-dap.nvim",
+            config = function()
+                require("mason-nvim-dap").setup({
+                    ensure_installed = { "javatest", "javadbg" }
+                })
+            end
         },
         {
             "rcarriga/nvim-dap-ui",
