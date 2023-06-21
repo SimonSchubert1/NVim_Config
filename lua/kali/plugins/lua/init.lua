@@ -1,3 +1,3 @@
 return {
-    require("kali.plugins.lua.nvim-lua-gf"),
+	require("kali.plugins.lua.nvim-lua-gf"),
 }
