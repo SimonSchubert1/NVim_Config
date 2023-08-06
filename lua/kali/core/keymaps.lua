@@ -76,3 +76,12 @@ keymap("i", "<F5>", ":Jaq<cr>", opts)
 
 keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", opts)
 keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", opts)
+
+-- Yanky --
+-- keymap("n", "p", "<Plug>(YankyPutAfter)")
+-- keymap("n", "P", "<Plug>(YankyPutBefore)")
+-- keymap("n", "gp", "<Plug>(YankyGPutAfter)")
+-- keymap("n", "gP", "<Plug>(YankyGPutBefore)")
+--
+-- keymap("n", "<c-n>", "<Plug>(YankyCycleForward)")
+-- keymap("n", "<c-n>", "<Plug>(YankyCycleBackward)")

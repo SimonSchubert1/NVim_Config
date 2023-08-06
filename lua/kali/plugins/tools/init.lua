@@ -10,4 +10,6 @@ return {
     require("kali.plugins.tools.treesitter"),
     require("kali.plugins.tools.trouble"),
     require("kali.plugins.tools.whichkey"),
+    require("kali.plugins.tools.vim-bbye"),
+    -- require("kali.plugins.tools.yanky"),
 }

@@ -5,4 +5,8 @@ return {
     "folke/tokyonight.nvim",
     "catppuccin/nvim",
     "Mofiqul/dracula.nvim",
+    "xiantang/darcula-dark.nvim",
+    dependencies = {
+        "nvim-treesitter/nvim-treesitter",
+    },
 }

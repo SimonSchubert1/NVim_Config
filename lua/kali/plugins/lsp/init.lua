@@ -6,8 +6,6 @@ return {
     require("kali.plugins.lsp.lsp-colors"),
     -- require("kali.plugins.lsp.lspsaga"),
     -- require("kali.plugins.lsp.fidget"),
-    -- require("kali.plugins.lsp.code-action-menu"),
     -- require("kali.plugins.lsp.lsp-signature"),
-    -- require("kali.plugins.lsp.coc"),
     require("kali.plugins.lsp.handlers").setup(),
 }
