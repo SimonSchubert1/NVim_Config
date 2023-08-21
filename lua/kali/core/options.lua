@@ -41,6 +41,10 @@ local g = {
     loaded_node_provider = 0,
     loaded_python_provider = 0,
     loaded_python3_provider = 0,
+    -- GitBlame
+    -- gitblame_enabled = 0,
+    -- gitblame_message_template = "<author> • <date>", -- • <summary>",
+    -- gitblame_date_format = "%r",
 }
 
 for k, v in pairs(options) do

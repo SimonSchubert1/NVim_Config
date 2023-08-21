@@ -10,6 +10,8 @@ doc file in the repo
 
 ## Issues:
 
+**if volar does not work update node!!!**
+
 If Toggleterm function is called put ()
 Install npm if you can't install language servers
 
